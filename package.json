@@ -14,7 +14,6 @@
   "coverage": "cross-env NODE_ENV=test nyc --reporter=text-lcov mocha --compilers js:babel-register | coveralls"
  },
  "devDependencies": {
-  "babel": "^6.23.0",
   "babel-cli": "^6.24.0",
   "babel-core": "^6.24.0",
   "babel-eslint": "^7.2.1",
