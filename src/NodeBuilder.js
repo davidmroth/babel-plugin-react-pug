@@ -2,7 +2,6 @@
 
 import type { PugNode, PugAttributeNode } from '../types/pug'
 import type { BabelNode, BabelNodeResponse } from '../types/babel'
-import type { BabelNode, BabelNodeResponse } from '../types/babel'
 import Translations from './translations'
 
 import * as t from 'babel-types'
@@ -67,9 +66,9 @@ export default class NodeBuilder {
    */
   convertAttributeKey (value: string) : string {
     //HACK: Not sure if this is correct, but this is how you fix attributes like, aria-hidden, aria-label, etc...
-    if (value.indexOf('-') > -1) {
-      value = "\'" + value + "\'";
-    }
+		if (value.indexOf('-') > -1) {
+			value = `'${value}'`
+		}
 
     /*
       NOTE: Borrowed from https://github.com/insin/babel-plugin-react-html-attrs
